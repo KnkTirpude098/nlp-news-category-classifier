@@ -2,9 +2,9 @@
 import os
 import joblib
 from flask import Flask, request, jsonify
-
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app)
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "news_classifier_model.pkl")
 model = joblib.load(MODEL_PATH)
 
